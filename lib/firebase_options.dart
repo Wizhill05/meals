@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,6 +43,17 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBxUn00ek0244H7QTu97vEeI97ZyH699OU',
+    appId: '1:824585926919:web:dda549e8f73bbba4f06da2',
+    messagingSenderId: '824585926919',
+    projectId: 'hostelmessmanagent',
+    authDomain: 'hostelmessmanagent.firebaseapp.com',
+    databaseURL: 'https://hostelmessmanagent-default-rtdb.firebaseio.com',
+    storageBucket: 'hostelmessmanagent.appspot.com',
+    measurementId: 'G-WL1MZD51XE',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyATkBZEF9GzYJLjlpL1qfePf55uWQIvC-8',
     appId: '1:824585926919:android:846db2ffc89a75f1f06da2',
@@ -59,5 +61,25 @@ class DefaultFirebaseOptions {
     projectId: 'hostelmessmanagent',
     databaseURL: 'https://hostelmessmanagent-default-rtdb.firebaseio.com',
     storageBucket: 'hostelmessmanagent.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBgGxsd2WlJj_YZVf0WRyLXyAx_iugka9w',
+    appId: '1:824585926919:ios:0c316247c8f3a3e2f06da2',
+    messagingSenderId: '824585926919',
+    projectId: 'hostelmessmanagent',
+    databaseURL: 'https://hostelmessmanagent-default-rtdb.firebaseio.com',
+    storageBucket: 'hostelmessmanagent.appspot.com',
+    iosBundleId: 'com.example.project02Hackloop',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBgGxsd2WlJj_YZVf0WRyLXyAx_iugka9w',
+    appId: '1:824585926919:ios:ecb0cceb0d559b16f06da2',
+    messagingSenderId: '824585926919',
+    projectId: 'hostelmessmanagent',
+    databaseURL: 'https://hostelmessmanagent-default-rtdb.firebaseio.com',
+    storageBucket: 'hostelmessmanagent.appspot.com',
+    iosBundleId: 'com.example.project02Hackloop.RunnerTests',
   );
 }

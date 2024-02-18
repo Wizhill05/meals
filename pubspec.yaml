@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.2.5 <4.0.0'
 
 dependencies:
-  cloud_firestore: ^4.15.3
+  cloud_firestore: ^4.15.4
   connectivity_plus: ^3.0.2
   firebase_auth: ^4.17.0
   firebase_core: ^2.25.0
@@ -21,6 +21,9 @@ dependencies:
   google_nav_bar: ^5.0.6
   qr_flutter: ^4.1.0
   fl_chart: ^0.66.2
+  web: 0.3.0
+  ffi: ^2.1.0
+  js: ^0.6.7
 
 dev_dependencies:
   flutter_test:
